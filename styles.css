@@ -377,8 +377,9 @@ h3 {
 }
 
 .omer-showcase {
-  min-height: 58rem;
-  padding: clamp(3.4rem, 5vw, 5.3rem) clamp(1rem, 4vw, 4.4rem);
+  min-height: 56.25vw;
+  max-height: 62rem;
+  padding: clamp(2rem, 3vw, 3rem) clamp(1rem, 3vw, 3rem);
   background:
     radial-gradient(circle at 79% 79%, rgba(216, 173, 78, 0.16), transparent 21rem),
     radial-gradient(circle at 27% 50%, rgba(216, 173, 78, 0.12), transparent 25rem),
@@ -393,7 +394,7 @@ h3 {
   inset: 0;
   z-index: -3;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.72) 38%, rgba(0, 0, 0, 0.36)),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.74) 33%, rgba(0, 0, 0, 0.42)),
     radial-gradient(circle at 95% 94%, rgba(216, 173, 78, 0.2), transparent 17rem);
 }
 
@@ -416,24 +417,26 @@ h3 {
 
 .omer-model {
   position: absolute;
-  left: -2rem;
+  left: -3.2vw;
   bottom: 0;
   z-index: -2;
-  width: min(36vw, 35rem);
+  width: 36vw;
   height: 100%;
   object-fit: cover;
-  object-position: 42% center;
-  filter: saturate(1.04) contrast(1.04);
-  opacity: 0.94;
+  object-position: 50% center;
+  filter: saturate(1.08) contrast(1.08) brightness(0.82);
+  opacity: 1;
+  mix-blend-mode: multiply;
+  mask-image: linear-gradient(90deg, black 0 68%, transparent 100%);
 }
 
 .orbital-line {
   position: absolute;
   left: -12rem;
-  top: 7rem;
+  top: 5.5rem;
   z-index: -1;
-  width: 34rem;
-  height: 34rem;
+  width: 31rem;
+  height: 31rem;
   border: 1px solid rgba(246, 215, 126, 0.6);
   border-right-color: transparent;
   border-bottom-color: transparent;
@@ -445,7 +448,7 @@ h3 {
 .omer-inner {
   position: relative;
   z-index: 2;
-  width: min(68rem, 67vw);
+  width: 63.5vw;
   margin-left: auto;
 }
 
@@ -454,7 +457,7 @@ h3 {
   grid-template-columns: minmax(4rem, 1fr) auto minmax(4rem, 1fr);
   align-items: center;
   gap: 1.1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .showcase-kicker span {
@@ -471,7 +474,7 @@ h3 {
   margin: 0;
   color: var(--text);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1rem, 1.55vw, 1.65rem);
+  font-size: clamp(0.92rem, 1.25vw, 1.42rem);
   letter-spacing: 0.26em;
   text-align: center;
   text-transform: uppercase;
@@ -486,16 +489,16 @@ h3 {
 .showcase-cards {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(0.8rem, 1.4vw, 1.45rem);
+  gap: clamp(0.75rem, 1.15vw, 1.2rem);
 }
 
 .showcase-card {
   position: relative;
   display: grid;
-  min-height: 16.3rem;
+  min-height: 12.6rem;
   align-content: start;
   justify-items: center;
-  padding: 1.65rem 1rem 1.35rem;
+  padding: 1rem 0.8rem 0.95rem;
   overflow: hidden;
   text-align: center;
   background:
@@ -548,9 +551,9 @@ h3 {
 .card-icon {
   position: relative;
   display: block;
-  width: 4.4rem;
-  height: 4.4rem;
-  margin-bottom: 1.25rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin-bottom: 0.75rem;
   color: var(--gold-2);
 }
 
@@ -640,8 +643,8 @@ h3 {
 }
 
 .showcase-card h3 {
-  min-height: 2.4rem;
-  margin-bottom: 1.15rem;
+  min-height: 2.2rem;
+  margin-bottom: 0.65rem;
   font-size: clamp(0.76rem, 0.95vw, 1.02rem);
   letter-spacing: 0.15em;
 }
@@ -651,26 +654,26 @@ h3 {
   display: block;
   width: 3.1rem;
   height: 1px;
-  margin: 0.9rem auto 0;
+  margin: 0.65rem auto 0;
   background: linear-gradient(90deg, transparent, var(--gold-2), transparent);
 }
 
 .showcase-card p {
   margin: 0;
   color: rgba(248, 242, 232, 0.8);
-  font-size: clamp(0.92rem, 0.95vw, 1.08rem);
+  font-size: clamp(0.82rem, 0.85vw, 0.98rem);
   line-height: 1.45;
 }
 
 .omer-content {
-  width: min(40rem, 62%);
-  margin-top: clamp(3.2rem, 6vw, 6.4rem);
+  width: min(37rem, 51%);
+  margin-top: clamp(2rem, 4.2vw, 4.2rem);
 }
 
 .omer-content h2 {
-  margin-bottom: 1.35rem;
+  margin-bottom: 1rem;
   color: var(--text);
-  font-size: clamp(3.5rem, 6.6vw, 7.5rem);
+  font-size: clamp(3.2rem, 5.2vw, 6rem);
 }
 
 .omer-content h2 span {
@@ -684,24 +687,26 @@ h3 {
 
 .omer-content p {
   color: var(--muted);
-  font-size: clamp(1.04rem, 1.35vw, 1.32rem);
+  font-size: clamp(0.98rem, 1.12vw, 1.2rem);
 }
 
 .omer-machine {
   position: absolute;
-  right: clamp(-1rem, 1vw, 1.4rem);
-  bottom: 0;
+  right: 1vw;
+  bottom: 0.4vw;
   z-index: 3;
-  width: min(38vw, 39rem);
+  width: 34.5vw;
+  height: 30vw;
+  overflow: hidden;
   filter: drop-shadow(0 2rem 4rem rgba(0, 0, 0, 0.58));
 }
 
 .omer-machine::before {
   content: "";
   position: absolute;
-  left: 11%;
-  right: 7%;
-  bottom: 5%;
+  left: 8%;
+  right: 5%;
+  bottom: 3%;
   z-index: -1;
   height: 5.4rem;
   border: 1px solid rgba(216, 173, 78, 0.45);
@@ -712,8 +717,11 @@ h3 {
 
 .omer-machine img {
   width: 100%;
-  transform: scale(1.05);
-  transform-origin: bottom right;
+  height: 100%;
+  object-fit: cover;
+  object-position: 86% 64%;
+  transform: scale(2.15);
+  transform-origin: 86% 64%;
 }
 
 .section-title {
