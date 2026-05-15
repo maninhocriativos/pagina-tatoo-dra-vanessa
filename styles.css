@@ -11,6 +11,113 @@
   color-scheme: dark;
 }
 
+@media (max-width: 1080px) {
+  .hero-lamina-main,
+  .nova-fase-lamina {
+    min-height: 48rem;
+    aspect-ratio: auto;
+  }
+
+  .hero-lamina-professional {
+    right: -9rem;
+    width: 86%;
+    height: 86%;
+    opacity: 0.9;
+  }
+
+  .hero-lamina-copy {
+    left: 1.2rem;
+    top: auto;
+    bottom: 8rem;
+    width: min(34rem, 70%);
+  }
+
+  .hero-lamina-copy h1 {
+    font-size: clamp(3.2rem, 9vw, 5.6rem);
+  }
+
+  .nova-fase-copy {
+    left: 6%;
+    width: 45%;
+  }
+
+  .nova-fase-portrait {
+    right: 4%;
+    width: 45%;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-lamina-main {
+    min-height: 45rem;
+  }
+
+  .hero-lamina-professional {
+    right: -10rem;
+    width: 53rem;
+    max-width: none;
+    height: 76%;
+    opacity: 0.74;
+  }
+
+  .hero-lamina-copy {
+    left: 1.2rem;
+    right: 1.2rem;
+    bottom: 8.6rem;
+    width: auto;
+  }
+
+  .hero-lamina-copy h1 {
+    font-size: clamp(3rem, 15vw, 4.6rem);
+  }
+
+  .hero-lamina-copy p {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .hero-lamina-actions {
+    display: grid;
+  }
+
+  .hero-lamina-button {
+    width: 100%;
+  }
+
+  .hero-lamina-status {
+    display: none;
+  }
+
+  .nova-fase-lamina {
+    min-height: 47rem;
+  }
+
+  .nova-fase-copy {
+    left: 1.2rem;
+    right: 1.2rem;
+    top: 9rem;
+    width: auto;
+    transform: none;
+  }
+
+  .nova-fase-copy h2 {
+    font-size: clamp(2.7rem, 12vw, 4.2rem);
+  }
+
+  .nova-fase-copy p {
+    font-size: 1.05rem;
+    line-height: 1.24;
+  }
+
+  .nova-fase-portrait {
+    right: 50%;
+    top: auto;
+    bottom: 3.5rem;
+    width: min(22rem, 88vw);
+    transform: translateX(50%);
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -313,6 +420,145 @@ h3 {
 
 .hero-status strong {
   color: var(--gold-2);
+}
+
+.hero-lamina-main {
+  min-height: 100vh;
+  aspect-ratio: 16 / 9;
+  background: #030303;
+  overflow: hidden;
+}
+
+.hero-lamina-bg,
+.hero-lamina-professional {
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+}
+
+.hero-lamina-bg {
+  inset: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-lamina-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.08) 56%, rgba(0, 0, 0, 0.32) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.68) 0%, transparent 42%);
+}
+
+.hero-lamina-professional {
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 61.5%;
+  height: 97%;
+  object-fit: contain;
+  object-position: right bottom;
+  filter: drop-shadow(0 2rem 4rem rgba(0, 0, 0, 0.45));
+  animation: heroFloat 5.8s ease-in-out infinite;
+}
+
+.hero-lamina-copy {
+  position: absolute;
+  left: 4.45%;
+  top: 27%;
+  z-index: 3;
+  width: min(40rem, 42%);
+}
+
+.hero-lamina-copy h1 {
+  margin: 0 0 1.05rem;
+  max-width: none;
+  color: var(--gold-2);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.2rem, 5.2vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.93;
+  text-transform: uppercase;
+  text-shadow: 0 1.4rem 3.2rem rgba(0, 0, 0, 0.62);
+}
+
+.hero-lamina-copy p {
+  width: min(32rem, 100%);
+  margin: 0;
+  color: rgba(248, 242, 232, 0.94);
+  font-size: clamp(1rem, 1.25vw, 1.42rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.hero-lamina-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.65rem;
+}
+
+.hero-lamina-button {
+  display: inline-flex;
+  min-height: clamp(2.4rem, 3vw, 3.25rem);
+  align-items: center;
+  justify-content: center;
+  padding: 0.78rem 1.25rem;
+  border-radius: 999px;
+  font-size: clamp(0.74rem, 0.82vw, 0.92rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.hero-lamina-button.primary {
+  background: linear-gradient(135deg, #ffe28d 0%, #c79234 58%, #8d5c18 100%);
+  color: #080705;
+  box-shadow: 0 0 2rem rgba(246, 215, 126, 0.24);
+}
+
+.hero-lamina-button.ghost {
+  border: 1px solid rgba(246, 215, 126, 0.76);
+  background: rgba(0, 0, 0, 0.34);
+  color: var(--gold-2);
+}
+
+.hero-lamina-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 2.5rem rgba(246, 215, 126, 0.34);
+}
+
+.hero-lamina-status {
+  position: absolute;
+  right: 5%;
+  bottom: 10.5%;
+  z-index: 4;
+  display: grid;
+  gap: 0.18rem;
+  min-width: 10rem;
+  padding: 0.85rem 1rem;
+  background: rgba(0, 0, 0, 0.38);
+  border: 1px solid rgba(216, 173, 78, 0.28);
+  border-radius: 0.35rem;
+  backdrop-filter: blur(10px);
+  opacity: 0.8;
+}
+
+.hero-lamina-status span {
+  color: rgba(248, 242, 232, 0.56);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-lamina-status strong {
+  color: rgba(246, 215, 126, 0.72);
+  font-size: 0.82rem;
 }
 
 .statement {
@@ -724,6 +970,266 @@ h3 {
   transform-origin: 86% 64%;
 }
 
+.omer-lamina {
+  min-height: min(56.25vw, 61rem);
+  aspect-ratio: 16 / 9;
+  scroll-margin-top: 6rem;
+  background: #020202;
+  overflow: hidden;
+}
+
+.omer-lamina-bg,
+.omer-lamina-model,
+.omer-lamina-machine {
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+}
+
+.omer-lamina-bg {
+  inset: 0;
+  z-index: -4;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.omer-lamina::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background:
+    linear-gradient(90deg, transparent 0 29%, rgba(0, 0, 0, 0.74) 34%, rgba(0, 0, 0, 0.18) 100%),
+    radial-gradient(circle at 29% 42%, rgba(216, 173, 78, 0.12), transparent 21rem);
+}
+
+.omer-lamina::after {
+  content: "";
+  position: absolute;
+  left: -12%;
+  top: 7%;
+  z-index: -2;
+  width: 39%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(246, 215, 126, 0.58);
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 2.5rem rgba(216, 173, 78, 0.16);
+}
+
+.omer-lamina-model {
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 34.3%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  filter: saturate(1.08) contrast(1.05) brightness(0.82);
+  mask-image: linear-gradient(90deg, black 0 84%, transparent 100%);
+}
+
+.omer-lamina-machine {
+  right: 1.7%;
+  bottom: 1.4%;
+  z-index: 3;
+  width: 31.6%;
+  height: auto;
+  filter: drop-shadow(0 2rem 3.5rem rgba(0, 0, 0, 0.62));
+  animation: machineFloat 5s ease-in-out infinite;
+}
+
+.omer-lamina-content {
+  position: absolute;
+  inset: 4.8% 3.2% 7% 36.2%;
+  z-index: 2;
+}
+
+.omer-lamina-heading {
+  display: grid;
+  grid-template-columns: minmax(5rem, 1fr) auto minmax(5rem, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.3%;
+}
+
+.omer-lamina-heading span {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(246, 215, 126, 0.82));
+  box-shadow: 0 0 1rem rgba(246, 215, 126, 0.68);
+}
+
+.omer-lamina-heading span:last-child {
+  background: linear-gradient(90deg, rgba(246, 215, 126, 0.82), transparent);
+}
+
+.omer-lamina-heading p {
+  margin: 0;
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.28vw, 1.55rem);
+  letter-spacing: 0.27em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.omer-lamina-heading strong {
+  color: var(--gold-2);
+  font-weight: 400;
+}
+
+.omer-lamina-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.45%;
+  width: 100%;
+}
+
+.omer-lamina-card {
+  position: relative;
+  min-height: clamp(10.8rem, 15.6vw, 16.9rem);
+  padding: clamp(1rem, 1.45vw, 1.55rem) clamp(0.7rem, 1vw, 1rem);
+  overflow: hidden;
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.09), transparent 28%),
+    radial-gradient(circle at 50% 100%, rgba(246, 215, 126, 0.12), transparent 36%),
+    rgba(7, 7, 6, 0.78);
+  border: 1px solid rgba(216, 173, 78, 0.78);
+  border-radius: 0.72rem;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 1.3rem 3rem rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(2px);
+  transition: transform 320ms ease, border-color 320ms ease, box-shadow 320ms ease;
+}
+
+.omer-lamina-card::before {
+  content: "";
+  position: absolute;
+  inset: -80% -130%;
+  background: linear-gradient(115deg, transparent 42%, rgba(246, 215, 126, 0.28), transparent 58%);
+  transform: translateX(-35%) rotate(12deg);
+  transition: transform 800ms ease;
+}
+
+.omer-lamina-card::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  width: 4rem;
+  height: 1px;
+  background: var(--gold-2);
+  box-shadow: 0 0 1.1rem rgba(246, 215, 126, 0.9);
+  transform: translateX(-50%);
+}
+
+.omer-lamina-card:hover {
+  transform: translateY(-0.45rem);
+  border-color: rgba(246, 215, 126, 1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 2rem 4.5rem rgba(0, 0, 0, 0.42), 0 0 2.4rem rgba(216, 173, 78, 0.16);
+}
+
+.omer-lamina-card:hover::before {
+  transform: translateX(35%) rotate(12deg);
+}
+
+.omer-lamina-card svg {
+  position: relative;
+  z-index: 1;
+  width: clamp(3.1rem, 4.25vw, 4.65rem);
+  height: clamp(3.1rem, 4.25vw, 4.65rem);
+  margin-bottom: clamp(0.75rem, 1vw, 1.05rem);
+  fill: none;
+  stroke: var(--gold-2);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 0.5rem rgba(246, 215, 126, 0.28));
+}
+
+.omer-lamina-card h3 {
+  position: relative;
+  z-index: 1;
+  min-height: 2.1rem;
+  margin-bottom: clamp(0.7rem, 0.9vw, 0.95rem);
+  color: var(--gold-2);
+  font-size: clamp(0.72rem, 0.95vw, 1rem);
+  line-height: 1.25;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.omer-lamina-card h3::after {
+  content: "";
+  display: block;
+  width: 2.8rem;
+  height: 1px;
+  margin: 0.72rem auto 0;
+  background: linear-gradient(90deg, transparent, var(--gold-2), transparent);
+}
+
+.omer-lamina-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: rgba(248, 242, 232, 0.82);
+  font-size: clamp(0.8rem, 1vw, 1.1rem);
+  line-height: 1.45;
+}
+
+.omer-lamina-copy {
+  position: absolute;
+  left: 0;
+  top: 47.7%;
+  width: 42%;
+}
+
+.omer-lamina-copy h2 {
+  margin: 0 0 1.2rem;
+  color: var(--text);
+  font-size: clamp(3.6rem, 6vw, 7.25rem);
+  line-height: 0.96;
+}
+
+.omer-lamina-copy h2 span {
+  display: block;
+  color: var(--gold-2);
+  background: linear-gradient(120deg, #fff2be 0%, #d99f3b 62%, #8b5718 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.omer-title-rule {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin: 1.25rem 0 1.35rem;
+  background: linear-gradient(90deg, rgba(246, 215, 126, 0.78), transparent);
+  box-shadow: 0 0 1rem rgba(246, 215, 126, 0.58);
+}
+
+.omer-title-rule::after {
+  content: "";
+  position: absolute;
+  left: 48%;
+  top: -0.23rem;
+  width: 0.46rem;
+  height: 0.46rem;
+  border: 1px solid var(--gold-2);
+  transform: rotate(45deg);
+}
+
+.omer-lamina-copy p {
+  margin: 0;
+  color: rgba(248, 242, 232, 0.86);
+  font-size: clamp(0.98rem, 1.28vw, 1.38rem);
+  line-height: 1.65;
+}
+
 .section-title {
   max-width: 72rem;
   margin: 0 auto 2.8rem;
@@ -970,6 +1476,195 @@ footer {
   border-top: 1px solid rgba(216, 173, 78, 0.2);
 }
 
+.hero-lamina-main,
+.nova-fase-lamina {
+  position: relative;
+  min-height: 56.25vw;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero-lamina-bg,
+.hero-lamina-professional,
+.nova-fase-bg {
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+}
+
+.hero-lamina-bg,
+.nova-fase-bg {
+  inset: 0;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-lamina-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.68) 0%, transparent 42%);
+}
+
+.hero-lamina-professional {
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 61.7%;
+  height: 99%;
+  object-fit: contain;
+  object-position: right bottom;
+  filter: drop-shadow(0 2rem 4rem rgba(0, 0, 0, 0.45));
+  animation: heroFloat 5.8s ease-in-out infinite;
+}
+
+.hero-lamina-copy {
+  position: absolute;
+  left: 4.5%;
+  top: 29.3%;
+  z-index: 3;
+  width: 38%;
+}
+
+.hero-lamina-copy h1 {
+  max-width: none;
+  margin: 0 0 1.3rem;
+  color: var(--gold-2);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.1rem, 5vw, 6.25rem);
+  font-weight: 400;
+  line-height: 0.92;
+  text-transform: uppercase;
+  text-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.65);
+}
+
+.hero-lamina-copy p {
+  width: min(33rem, 100%);
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1rem, 1.2vw, 1.38rem);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.hero-lamina-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.65rem;
+}
+
+.hero-lamina-button {
+  display: inline-flex;
+  min-height: clamp(2.4rem, 2.8vw, 3.15rem);
+  align-items: center;
+  justify-content: center;
+  padding: 0.78rem 1.25rem;
+  border-radius: 999px;
+  font-size: clamp(0.72rem, 0.76vw, 0.88rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.hero-lamina-button.primary {
+  background: linear-gradient(135deg, #ffe28d 0%, #c79234 58%, #8d5c18 100%);
+  color: #080705;
+  box-shadow: 0 0 2rem rgba(246, 215, 126, 0.24);
+}
+
+.hero-lamina-button.ghost {
+  border: 1px solid rgba(246, 215, 126, 0.78);
+  background: rgba(0, 0, 0, 0.34);
+  color: var(--gold-2);
+}
+
+.hero-lamina-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 2.5rem rgba(246, 215, 126, 0.34);
+}
+
+.hero-lamina-status {
+  position: absolute;
+  right: 5.4%;
+  bottom: 10%;
+  z-index: 4;
+  display: grid;
+  gap: 0.2rem;
+  min-width: 10.5rem;
+  padding: 0.85rem 1rem;
+  background: rgba(0, 0, 0, 0.34);
+  border: 1px solid rgba(216, 173, 78, 0.22);
+  border-radius: 0.35rem;
+  opacity: 0.7;
+}
+
+.hero-lamina-status span {
+  color: rgba(248, 242, 232, 0.5);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-lamina-status strong {
+  color: rgba(246, 215, 126, 0.72);
+  font-size: 0.82rem;
+}
+
+.nova-fase-lamina {
+  scroll-margin-top: 6rem;
+}
+
+.nova-fase-copy {
+  position: absolute;
+  left: 11%;
+  top: 37%;
+  z-index: 2;
+  width: 37%;
+  transform: translateY(-50%);
+}
+
+.nova-fase-copy h2 {
+  margin: 0 0 1.55rem;
+  color: var(--gold-2);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 4.2vw, 5.05rem);
+  font-weight: 400;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.nova-fase-copy p {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.25rem, 1.65vw, 2rem);
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.nova-fase-portrait {
+  position: absolute;
+  right: 10.2%;
+  top: 22.6%;
+  z-index: 2;
+  width: 39.2%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: portraitFloat 5.4s ease-in-out infinite;
+}
+
+.nova-fase-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 1.6rem rgba(246, 215, 126, 0.22));
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(2rem);
@@ -1002,6 +1697,39 @@ footer {
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes machineFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.45rem);
+  }
+}
+
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.35rem);
+  }
+}
+
+@keyframes portraitFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-0.45rem) scale(1.01);
   }
 }
 
@@ -1040,6 +1768,29 @@ footer {
 
   .hero {
     min-height: 48rem;
+  }
+
+  .hero-lamina-main {
+    min-height: 48rem;
+    aspect-ratio: auto;
+  }
+
+  .hero-lamina-professional {
+    right: -9rem;
+    width: 86%;
+    height: 86%;
+    opacity: 0.9;
+  }
+
+  .hero-lamina-copy {
+    left: 1.2rem;
+    top: auto;
+    bottom: 8rem;
+    width: min(34rem, 70%);
+  }
+
+  .hero-lamina-copy h1 {
+    font-size: clamp(3.2rem, 9vw, 5.6rem);
   }
 
   .hero::before {
@@ -1100,6 +1851,49 @@ footer {
   .cta-visual {
     min-height: clamp(24rem, 64vw, 38rem);
   }
+
+  .omer-lamina {
+    min-height: 86rem;
+    aspect-ratio: auto;
+  }
+
+  .omer-lamina-model {
+    width: 38rem;
+    max-width: 58vw;
+    opacity: 0.72;
+  }
+
+  .omer-lamina-content {
+    inset: 6rem 1.2rem 28rem 42%;
+  }
+
+  .omer-lamina-heading {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .omer-lamina-heading span {
+    width: min(15rem, 70vw);
+  }
+
+  .omer-lamina-heading p {
+    white-space: normal;
+  }
+
+  .omer-lamina-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .omer-lamina-copy {
+    top: 51%;
+    width: min(34rem, 100%);
+  }
+
+  .omer-lamina-machine {
+    width: min(36rem, 70vw);
+    right: 2rem;
+  }
 }
 
 @media (max-width: 720px) {
@@ -1135,6 +1929,46 @@ footer {
     min-height: 46rem;
     align-items: end;
     padding-top: 9.2rem;
+  }
+
+  .hero-lamina-main {
+    min-height: 45rem;
+  }
+
+  .hero-lamina-professional {
+    right: -10rem;
+    width: 53rem;
+    max-width: none;
+    height: 76%;
+    opacity: 0.74;
+  }
+
+  .hero-lamina-copy {
+    left: 1.2rem;
+    right: 1.2rem;
+    bottom: 8.6rem;
+    width: auto;
+  }
+
+  .hero-lamina-copy h1 {
+    font-size: clamp(3rem, 15vw, 4.6rem);
+  }
+
+  .hero-lamina-copy p {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .hero-lamina-actions {
+    display: grid;
+  }
+
+  .hero-lamina-button {
+    width: 100%;
+  }
+
+  .hero-lamina-status {
+    display: none;
   }
 
   .hero-bg {
@@ -1207,8 +2041,167 @@ footer {
     width: min(94vw, 28rem);
   }
 
+  .omer-lamina {
+    min-height: 92rem;
+  }
+
+  .omer-lamina::before {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.92) 38%, rgba(0, 0, 0, 0.72)),
+      radial-gradient(circle at 50% 12%, rgba(216, 173, 78, 0.12), transparent 18rem);
+  }
+
+  .omer-lamina-model {
+    left: 50%;
+    top: 0;
+    bottom: auto;
+    width: 26rem;
+    max-width: none;
+    height: 39rem;
+    opacity: 0.48;
+    transform: translateX(-50%);
+    mask-image: linear-gradient(180deg, black 0 62%, transparent 100%);
+  }
+
+  .omer-lamina-content {
+    inset: 5.5rem 1rem auto;
+  }
+
+  .omer-lamina-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .omer-lamina-card {
+    min-height: 12rem;
+  }
+
+  .omer-lamina-copy {
+    position: relative;
+    top: auto;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .omer-lamina-copy h2 {
+    font-size: clamp(3.3rem, 15vw, 5rem);
+  }
+
+  .omer-lamina-machine {
+    right: 50%;
+    bottom: 1rem;
+    width: min(28rem, 92vw);
+    transform: translateX(50%);
+  }
+
   footer {
     flex-direction: column;
     padding-bottom: 5.2rem;
+  }
+}
+
+@media (max-width: 1080px) {
+  .hero-lamina-main,
+  .nova-fase-lamina {
+    min-height: 48rem;
+    aspect-ratio: auto;
+  }
+
+  .hero-lamina-professional {
+    right: -9rem;
+    width: 86%;
+    height: 86%;
+    opacity: 0.9;
+  }
+
+  .hero-lamina-copy {
+    left: 1.2rem;
+    top: auto;
+    bottom: 8rem;
+    width: min(34rem, 70%);
+  }
+
+  .hero-lamina-copy h1 {
+    font-size: clamp(3.2rem, 9vw, 5.6rem);
+  }
+
+  .nova-fase-copy {
+    left: 6%;
+    width: 45%;
+  }
+
+  .nova-fase-portrait {
+    right: 4%;
+    width: 45%;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-lamina-main {
+    min-height: 45rem;
+  }
+
+  .hero-lamina-professional {
+    right: -10rem;
+    width: 53rem;
+    max-width: none;
+    height: 76%;
+    opacity: 0.74;
+  }
+
+  .hero-lamina-copy {
+    left: 1.2rem;
+    right: 1.2rem;
+    bottom: 8.6rem;
+    width: auto;
+  }
+
+  .hero-lamina-copy h1 {
+    font-size: clamp(3rem, 15vw, 4.6rem);
+  }
+
+  .hero-lamina-copy p {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .hero-lamina-actions {
+    display: grid;
+  }
+
+  .hero-lamina-button {
+    width: 100%;
+  }
+
+  .hero-lamina-status {
+    display: none;
+  }
+
+  .nova-fase-lamina {
+    min-height: 47rem;
+  }
+
+  .nova-fase-copy {
+    left: 1.2rem;
+    right: 1.2rem;
+    top: 9rem;
+    width: auto;
+    transform: none;
+  }
+
+  .nova-fase-copy h2 {
+    font-size: clamp(2.7rem, 12vw, 4.2rem);
+  }
+
+  .nova-fase-copy p {
+    font-size: 1.05rem;
+    line-height: 1.24;
+  }
+
+  .nova-fase-portrait {
+    right: 50%;
+    top: auto;
+    bottom: 3.5rem;
+    width: min(22rem, 88vw);
+    transform: translateX(50%);
   }
 }
