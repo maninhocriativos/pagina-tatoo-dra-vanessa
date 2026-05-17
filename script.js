@@ -2,6 +2,7 @@ const header = document.querySelector(".site-header");
 const progress = document.querySelector(".scroll-progress");
 const revealItems = document.querySelectorAll(".reveal");
 const navLinks = document.querySelectorAll(".nav a");
+const menuToggle = document.querySelector(".menu-toggle");
 const sections = [...navLinks]
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
@@ -24,6 +25,23 @@ const revealObserver = new IntersectionObserver(
 );
 
 revealItems.forEach((item) => revealObserver.observe(item));
+
+const closeMenu = () => {
+  header?.classList.remove("is-menu-open");
+  menuToggle?.setAttribute("aria-expanded", "false");
+  menuToggle?.setAttribute("aria-label", "Abrir menu");
+};
+
+menuToggle?.addEventListener("click", () => {
+  const isOpen = header?.classList.toggle("is-menu-open");
+  menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+});
+
+navLinks.forEach((link) => link.addEventListener("click", closeMenu));
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 760) closeMenu();
+});
 
 const updatePageState = () => {
   const max = document.documentElement.scrollHeight - window.innerHeight;
