@@ -389,7 +389,10 @@ h2 {
 }
 
 .hero-content .eyebrow {
+  max-width: 44rem;
   margin-bottom: 0.8rem;
+  font-size: clamp(0.62rem, 0.82vw, 0.86rem);
+  line-height: 1.45;
 }
 
 .hero h1 {
@@ -728,24 +731,30 @@ h2 {
 }
 
 .indicated-copy h2 {
-  max-width: 12ch;
+  max-width: 38rem;
+  font-size: clamp(2.65rem, 3.25vw, 4.15rem);
+  line-height: 1.08;
+}
+
+.indicated-copy h2 span {
+  display: block;
 }
 
 .check-list {
   display: grid;
-  gap: 0.95rem;
-  max-width: 48rem;
-  margin: 1.9rem 0 0;
+  gap: 0.7rem;
+  max-width: 38rem;
+  margin: 1.35rem 0 0;
   padding: 0;
   list-style: none;
 }
 
 .check-list li {
   position: relative;
-  padding-left: 2.7rem;
+  padding-left: 2.35rem;
   color: rgba(248, 239, 226, 0.86);
-  font-size: clamp(1rem, 1.18vw, 1.28rem);
-  line-height: 1.55;
+  font-size: clamp(0.92rem, 0.96vw, 1.04rem);
+  line-height: 1.45;
 }
 
 .check-list li::before {
@@ -754,13 +763,13 @@ h2 {
   left: 0;
   top: 0.05rem;
   display: grid;
-  width: 1.65rem;
-  height: 1.65rem;
+  width: 1.45rem;
+  height: 1.45rem;
   place-items: center;
   border: 1px solid var(--gold-light);
   border-radius: 50%;
   color: var(--gold-light);
-  font-size: 0.86rem;
+  font-size: 0.76rem;
   font-weight: 900;
 }
 
