@@ -350,6 +350,14 @@ h2 {
   object-fit: cover;
 }
 
+.hero-bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: inherit;
+}
+
 .hero-bg {
   object-position: center top;
 }
@@ -1304,17 +1312,25 @@ h2 {
   }
 
   .hero {
-    min-height: 51rem;
+    min-height: 52rem;
     height: auto;
     align-items: end;
     justify-items: center;
-    padding: 13.6rem 1rem 2.8rem;
+    padding: 27rem 1rem 2.25rem;
   }
 
   .hero::before {
     background:
-      linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.54)),
-      linear-gradient(0deg, #000 0%, rgba(0, 0, 0, 0.86) 42%, rgba(0, 0, 0, 0.14) 100%);
+      linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.02) 38%, rgba(0, 0, 0, 0.52) 58%, #000 82%, #000 100%);
+  }
+
+  .hero::after {
+    height: 7rem;
+    background: linear-gradient(180deg, transparent 0%, #000 62%, #030303 100%);
+  }
+
+  .hero-bg {
+    object-position: 68% top;
   }
 
   .hero-person {
@@ -1324,7 +1340,7 @@ h2 {
   }
 
   .hero-subtitle {
-    font-size: 0.9rem;
+    font-size: 0.84rem;
     max-width: 16rem;
     margin-left: auto;
     margin-right: auto;
@@ -1332,7 +1348,7 @@ h2 {
   }
 
   .hero-support {
-    font-size: 0.84rem;
+    font-size: 0.78rem;
     max-width: 16rem;
     margin-left: auto;
     margin-right: auto;
@@ -1549,7 +1565,7 @@ h2 {
 
 @media (max-width: 430px) {
   .hero {
-    min-height: 51rem;
+    min-height: 52rem;
   }
 
   .hero-person {

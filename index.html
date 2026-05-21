@@ -49,14 +49,19 @@
 
     <main id="inicio">
       <section class="hero section-lamina" aria-labelledby="hero-title">
-        <img
-          class="hero-bg"
-          src="assets/hero-lamina pricipal/Banner-hero.png"
-          width="1942"
-          height="809"
-          alt=""
-          fetchpriority="high"
-        >
+        <picture class="hero-bg">
+          <source
+            media="(max-width: 760px)"
+            srcset="assets/hero-lamina%20pricipal/Banner-hero-mobile.png"
+          >
+          <img
+            src="assets/hero-lamina pricipal/Banner-hero.png"
+            width="1942"
+            height="809"
+            alt=""
+            fetchpriority="high"
+          >
+        </picture>
 
         <div class="hero-content reveal">
           <p class="eyebrow">Remoção de tatuagem e de micropigmentação de sobrancelha</p>
