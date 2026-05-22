@@ -64,7 +64,10 @@
         </picture>
 
         <div class="hero-content reveal">
-          <p class="eyebrow">Remoção de tatuagem e de micropigmentação de sobrancelha</p>
+          <p class="eyebrow">
+            <span>Remoção de tatuagem e</span>
+            <span>micropigmentação de sobrancelha</span>
+          </p>
           <h1 id="hero-title">
             <span class="title-desktop">Aquela tatuagem</span>
             <span class="title-desktop">ainda combina</span>
@@ -332,6 +335,47 @@
     <a class="floating-whatsapp magnetic" href="https://wa.me/5592999679178" target="_blank" rel="noopener noreferrer">
       WhatsApp
     </a>
+
+    <div class="lead-modal" id="lead-modal" aria-hidden="true">
+      <div class="lead-modal__overlay" data-lead-close></div>
+      <div class="lead-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title">
+        <button class="lead-modal__close" type="button" aria-label="Fechar" data-lead-close>×</button>
+        <p class="eyebrow">Agendamento</p>
+        <h2 id="lead-modal-title">Vamos entender seu caso</h2>
+        <p class="lead-modal__intro">
+          Preencha seus dados para iniciar o atendimento pelo WhatsApp.
+        </p>
+
+        <form class="lead-form" id="lead-form">
+          <label>
+            <span>Nome</span>
+            <input type="text" name="name" autocomplete="name" required placeholder="Seu nome">
+          </label>
+
+          <label>
+            <span>Telefone</span>
+            <input type="tel" name="phone" autocomplete="tel" required placeholder="(92) 99999-9999">
+          </label>
+
+          <fieldset>
+            <legend>Qual procedimento você deseja?</legend>
+            <div class="procedure-options">
+              <label>
+                <input type="radio" name="procedure" value="Remoção de micropigmentação a laser" required>
+                <span>Remoção de micropigmentação a laser</span>
+              </label>
+              <label>
+                <input type="radio" name="procedure" value="Remoção de tatuagem a laser" required>
+                <span>Remoção de tatuagem a laser</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <p class="lead-form__feedback" aria-live="polite"></p>
+          <button class="button button-gold magnetic" type="submit">Continuar no WhatsApp</button>
+        </form>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div>

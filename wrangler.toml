@@ -1,0 +1,8 @@
+name = "pagina-tatoo-dra-vanessa"
+compatibility_date = "2026-05-22"
+pages_build_output_dir = ".deploy"
+
+[[d1_databases]]
+binding = "LEADS_DB"
+database_name = "pagina-tatoo-dra-vanessa-leads"
+database_id = "30a5719e-c456-4c5f-b7a0-62d380f4186f"
