@@ -2,3 +2,5 @@
 .screenshots/
 .wrangler/
 .deploy/
+node_modules/
+package-lock.json

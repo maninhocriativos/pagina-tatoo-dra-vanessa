@@ -13,10 +13,31 @@
       property="og:description"
       content="Tecnologia profissional, avaliação individual e acompanhamento real em cada etapa."
     >
-    <meta property="og:image" content="assets/hero-lamina%20pricipal/referencia-final.png">
+    <meta property="og:image" content="assets/hero-lamina%20pricipal/referencia-final.webp">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="assets/hero-lamina%20pricipal/Banner-hero-mobile.webp"
+      media="(max-width: 760px)"
+      fetchpriority="high"
+    >
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="assets/hero-lamina%20pricipal/Banner-hero-1200.webp"
+      media="(min-width: 761px)"
+      fetchpriority="high"
+    >
+    <link rel="preload" href="styles.css" as="style">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    >
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -51,6 +72,17 @@
       <section class="hero section-lamina" aria-labelledby="hero-title">
         <picture class="hero-bg">
           <source
+            type="image/webp"
+            media="(max-width: 760px)"
+            srcset="assets/hero-lamina%20pricipal/Banner-hero-mobile.webp"
+          >
+          <source
+            type="image/webp"
+            media="(min-width: 761px)"
+            srcset="assets/hero-lamina%20pricipal/Banner-hero-1200.webp 1200w, assets/hero-lamina%20pricipal/Banner-hero.webp 1942w"
+            sizes="100vw"
+          >
+          <source
             media="(max-width: 760px)"
             srcset="assets/hero-lamina%20pricipal/Banner-hero-mobile.png"
           >
@@ -60,6 +92,7 @@
             height="809"
             alt=""
             fetchpriority="high"
+            decoding="async"
           >
         </picture>
 
@@ -102,13 +135,21 @@
 
       <section class="emotional section-block" aria-labelledby="emocional-title">
         <div class="emotional-media reveal">
-          <img
-            src="assets/nova-fase/rosto-laser.png"
-            width="757"
-            height="736"
-            loading="lazy"
-            alt="Aplicação de laser em detalhe facial, representando cuidado e precisão."
-          >
+          <picture>
+            <source
+              type="image/webp"
+              sizes="(max-width: 760px) 92vw, min(42rem, 44vw)"
+              srcset="assets/nova-fase/rosto-laser-768.webp 768w, assets/nova-fase/rosto-laser.webp 1514w"
+            >
+            <img
+              src="assets/nova-fase/rosto-laser.png"
+              width="757"
+              height="736"
+              loading="lazy"
+              decoding="async"
+              alt="Aplicação de laser em detalhe facial, representando cuidado e precisão."
+            >
+          </picture>
         </div>
 
         <div class="section-copy reveal" data-delay="120">
@@ -182,13 +223,21 @@
         </div>
 
         <div class="machine-stage reveal" data-delay="130">
-          <img
-            src="assets/omer-showcase/maquina-omer.png"
-            width="1511"
-            height="1580"
-            loading="lazy"
-            alt="Equipamento Ômer usado em protocolos de remoção e clareamento a laser."
-          >
+          <picture>
+            <source
+              type="image/webp"
+              sizes="(max-width: 760px) 92vw, min(46rem, 48vw)"
+              srcset="assets/omer-showcase/maquina-omer-768.webp 768w, assets/omer-showcase/maquina-omer-1200.webp 1200w, assets/omer-showcase/maquina-omer.webp 1511w"
+            >
+            <img
+              src="assets/omer-showcase/maquina-omer.png"
+              width="1511"
+              height="1580"
+              loading="lazy"
+              decoding="async"
+              alt="Equipamento Ômer usado em protocolos de remoção e clareamento a laser."
+            >
+          </picture>
         </div>
       </section>
 
@@ -223,14 +272,21 @@
       </section>
 
       <section class="indicated section-block" aria-labelledby="indicado-title">
-        <img
-          class="indicated-bg"
-          src="assets/resultado com evolução/Banner-modelo-tatoo.png"
-          width="1920"
-          height="800"
-          loading="lazy"
-          alt=""
-        >
+        <picture class="indicated-bg">
+          <source
+            type="image/webp"
+            sizes="100vw"
+            srcset="assets/resultado%20com%20evolu%C3%A7%C3%A3o/Banner-modelo-tatoo-768.webp 768w, assets/resultado%20com%20evolu%C3%A7%C3%A3o/Banner-modelo-tatoo-1200.webp 1200w, assets/resultado%20com%20evolu%C3%A7%C3%A3o/Banner-modelo-tatoo.webp 1920w"
+          >
+          <img
+            src="assets/resultado com evolução/Banner-modelo-tatoo.png"
+            width="1920"
+            height="800"
+            loading="lazy"
+            decoding="async"
+            alt=""
+          >
+        </picture>
 
         <div class="indicated-copy reveal" data-delay="120">
           <p class="eyebrow">Para quem é</p>
@@ -296,22 +352,32 @@
       </section>
 
       <section class="final-cta section-lamina" id="agendar" aria-labelledby="cta-title">
-        <img
-          class="final-bg"
-          src="assets/agendar-avaliação/fundo.png"
-          width="1920"
-          height="1080"
-          loading="lazy"
-          alt=""
-        >
-        <img
-          class="final-person"
-          src="assets/agendar-avaliação/profissional.png"
-          width="754"
-          height="957"
-          loading="lazy"
-          alt="Dra Vanessa ao lado do equipamento de laser."
-        >
+        <picture class="final-bg">
+          <source type="image/webp" srcset="assets/agendar-avalia%C3%A7%C3%A3o/fundo.webp">
+          <img
+            src="assets/agendar-avaliação/fundo.png"
+            width="1920"
+            height="1080"
+            loading="lazy"
+            decoding="async"
+            alt=""
+          >
+        </picture>
+        <picture class="final-person">
+          <source
+            type="image/webp"
+            sizes="(max-width: 760px) 72vw, 38vw"
+            srcset="assets/agendar-avalia%C3%A7%C3%A3o/profissional-768.webp 768w, assets/agendar-avalia%C3%A7%C3%A3o/profissional.webp 1508w"
+          >
+          <img
+            src="assets/agendar-avaliação/profissional.png"
+            width="754"
+            height="957"
+            loading="lazy"
+            decoding="async"
+            alt="Dra Vanessa ao lado do equipamento de laser."
+          >
+        </picture>
 
         <div class="final-content reveal">
           <p class="eyebrow">Agendamento</p>

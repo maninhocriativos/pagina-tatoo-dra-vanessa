@@ -152,6 +152,8 @@ leadForm?.addEventListener("submit", async (event) => {
   }
 });
 
+let scrollFrame = 0;
+
 const updatePageState = () => {
   const max = document.documentElement.scrollHeight - window.innerHeight;
   const ratio = max > 0 ? window.scrollY / max : 0;
@@ -172,6 +174,14 @@ const updatePageState = () => {
   });
 };
 
-document.addEventListener("scroll", updatePageState, { passive: true });
-window.addEventListener("resize", updatePageState);
+const schedulePageStateUpdate = () => {
+  if (scrollFrame) return;
+  scrollFrame = window.requestAnimationFrame(() => {
+    scrollFrame = 0;
+    updatePageState();
+  });
+};
+
+document.addEventListener("scroll", schedulePageStateUpdate, { passive: true });
+window.addEventListener("resize", schedulePageStateUpdate);
 updatePageState();

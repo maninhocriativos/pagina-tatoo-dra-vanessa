@@ -64,6 +64,15 @@ Para testar a API de leads localmente:
 npx wrangler pages dev .
 ```
 
+## Performance (imagens)
+
+As imagens da página têm versões **WebP** com `srcset` responsivo. Para regenerar após trocar um PNG:
+
+```bash
+npm install sharp
+node scripts/optimize-images.mjs
+```
+
 ## Arquivos ignorados no deploy
 
-- `*.psd`, `.screenshots/`, `.wrangler/`
+- `*.psd`, `.screenshots/`, `.wrangler/`, `node_modules/`
