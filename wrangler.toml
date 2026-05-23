@@ -1,6 +1,5 @@
 name = "pagina-tatoo-dra-vanessa"
 compatibility_date = "2026-05-22"
-pages_build_output_dir = ".deploy"
 
 [[d1_databases]]
 binding = "LEADS_DB"

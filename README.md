@@ -1,20 +1,69 @@
-# Pagina de Remocao de Tatuagens
+# Página de Remoção de Tatuagens — Fisiolaser Manaus
 
-Landing page estatica para publicacao no Cloudflare Pages.
+Landing page premium para remoção e clareamento de tatuagens a laser, com captura de leads e publicação no **Cloudflare Pages**.
 
-## Como publicar no Cloudflare Pages
+## O que o site inclui
 
-1. Envie este projeto para um repositorio Git.
-2. No Cloudflare Pages, conecte o repositorio.
-3. Use as configuracoes:
-   - Framework preset: `None`
-   - Build command: deixar vazio
-   - Output directory: `/`
-4. Antes de publicar, substitua `5592999999999` no `index.html` pelo numero real do WhatsApp.
+- Página responsiva (desktop e mobile) com hero, benefícios, tecnologia Ômer, processo, FAQ e CTA final
+- Links de WhatsApp com número real: **+55 92 99967-9178** (`5592999679178`)
+- Modal de agendamento antes de abrir o WhatsApp (nome, telefone e procedimento)
+- API `POST /api/leads` gravando leads no **Cloudflare D1**
+- Backup local dos últimos 30 leads no navegador (`localStorage`)
 
 ## Arquivos principais
 
-- `index.html`: estrutura da pagina
-- `styles.css`: layout responsivo e identidade visual
-- `script.js`: comportamento leve do topo
-- `assets/`: imagens usadas na pagina
+| Arquivo / pasta | Função |
+|-----------------|--------|
+| `index.html` | Estrutura e conteúdo da página |
+| `styles.css` | Layout, tema e responsividade |
+| `script.js` | Menu, scroll, reveals, modal e envio de leads |
+| `assets/` | Imagens (banners, máquina, profissional, etc.) |
+| `functions/api/leads.js` | Function que salva leads no D1 |
+| `database/schema.sql` | Schema da tabela `leads` |
+| `wrangler.toml` | Configuração do projeto e binding D1 |
+| `_headers` | Cabeçalhos de segurança HTTP |
+
+## Publicar no Cloudflare Pages
+
+1. Conecte o repositório Git ao Cloudflare Pages.
+2. Use as configurações de build:
+   - **Framework preset:** `None`
+   - **Build command:** deixar vazio
+   - **Build output directory:** `/` (raiz do repositório)
+3. Faça push na branch `main` — o deploy em produção é disparado automaticamente.
+
+Repositório: `https://github.com/maninhocriativos/pagina-tatoo-dra-vanessa`
+
+## Banco D1 (leads)
+
+1. Crie o banco D1 `pagina-tatoo-dra-vanessa-leads` (ou use o já configurado no `wrangler.toml`).
+2. Aplique o schema:
+
+```bash
+npx wrangler d1 execute pagina-tatoo-dra-vanessa-leads --remote --file=./database/schema.sql
+```
+
+3. No painel do Cloudflare Pages, confirme o binding **`LEADS_DB`** apontando para esse banco.
+
+Sem o binding, a API responde `503` e o WhatsApp continua funcionando (o formulário abre o chat mesmo assim).
+
+## Alterar o WhatsApp
+
+Atualize o número em dois lugares:
+
+- `index.html` — links `https://wa.me/5592999679178`
+- `script.js` — constante `whatsappNumber`
+
+## Desenvolvimento local
+
+Arquivos estáticos podem ser abertos direto no navegador ou servidos com qualquer servidor local na raiz do projeto.
+
+Para testar a API de leads localmente:
+
+```bash
+npx wrangler pages dev .
+```
+
+## Arquivos ignorados no deploy
+
+- `*.psd`, `.screenshots/`, `.wrangler/`
