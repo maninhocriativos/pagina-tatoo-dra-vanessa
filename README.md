@@ -32,6 +32,14 @@ Landing page premium para remoção e clareamento de tatuagens a laser, com capt
    - **Build output directory:** `/` (raiz do repositório)
 3. Faça push na branch `main` — o deploy em produção é disparado automaticamente.
 
+Se o deploy automático não atualizar o site, publique manualmente (requer `CLOUDFLARE_API_TOKEN` ou login no Wrangler):
+
+```bash
+node scripts/deploy-pages.mjs
+```
+
+O script monta a pasta `.deploy` sem PSDs locais e envia para o projeto `pagina-tatoo-dra-vanessa` (domínio `fisiolasermanaus.com.br`).
+
 Repositório: `https://github.com/maninhocriativos/pagina-tatoo-dra-vanessa`
 
 ## Banco D1 (leads)
