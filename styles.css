@@ -895,9 +895,12 @@ body.is-modal-open {
 
 .services {
   display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(24rem, 1fr);
+  grid-template-columns: minmax(28rem, 0.9fr) minmax(34rem, 1fr);
   align-items: center;
-  gap: clamp(2rem, 5.2vw, 5.8rem);
+  gap: clamp(2.2rem, 4.4vw, 5.2rem);
+  min-height: auto;
+  padding-top: clamp(4.6rem, 5.4vw, 6.2rem);
+  padding-bottom: clamp(4.6rem, 5.4vw, 6.2rem);
   background:
     radial-gradient(circle at 82% 16%, rgba(255, 229, 141, 0.16), transparent 22rem),
     radial-gradient(circle at 12% 82%, rgba(211, 163, 68, 0.12), transparent 24rem),
@@ -918,13 +921,13 @@ body.is-modal-open {
 }
 
 .services-intro {
-  max-width: 42rem;
+  max-width: 45rem;
 }
 
 .services-intro h2 {
-  max-width: 38rem;
+  max-width: 42rem;
   color: #fff6df;
-  font-size: clamp(3rem, 4vw, 5.3rem);
+  font-size: clamp(3.25rem, 4.25vw, 5.35rem);
   line-height: 1.02;
   text-shadow: 0 0 1.8rem rgba(255, 229, 141, 0.12);
 }
@@ -934,7 +937,7 @@ body.is-modal-open {
 }
 
 .services-intro p {
-  max-width: 34rem;
+  max-width: 41rem;
   margin-top: 1.25rem;
   color: var(--muted);
   font-size: clamp(1.02rem, 1.08vw, 1.18rem);
@@ -943,8 +946,10 @@ body.is-modal-open {
 
 .services-panel {
   position: relative;
+  justify-self: end;
   overflow: hidden;
-  padding: clamp(1.45rem, 2.2vw, 2.1rem);
+  width: min(100%, 45rem);
+  padding: clamp(1.35rem, 2vw, 1.9rem);
   border: 1px solid rgba(255, 229, 141, 0.42);
   border-radius: 2rem;
   background:
@@ -952,6 +957,11 @@ body.is-modal-open {
     rgba(14, 9, 4, 0.9);
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.48), 0 0 3.2rem rgba(211, 163, 68, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(18px);
+}
+
+.services .services-panel.reveal {
+  opacity: 1;
+  transform: none;
 }
 
 .services-panel::before {
@@ -1033,15 +1043,29 @@ body.is-modal-open {
 
 .service-list {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
 }
 
 .service-item {
   display: grid;
-  grid-template-columns: 4.6rem 1fr;
+  min-height: 8.6rem;
+  grid-template-columns: 3.8rem 1fr;
   align-items: center;
-  gap: 1rem;
-  padding: 1.05rem 0.4rem;
-  border-top: 1px solid rgba(255, 229, 141, 0.24);
+  gap: 0.9rem;
+  padding: 1.05rem;
+  border: 1px solid rgba(255, 229, 141, 0.2);
+  border-radius: 1.1rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.012)),
+    rgba(0, 0, 0, 0.22);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.service-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 229, 141, 0.48);
+  box-shadow: 0 1.15rem 2.5rem rgba(0, 0, 0, 0.32), 0 0 1.2rem rgba(211, 163, 68, 0.12);
 }
 
 .service-icon {
@@ -1066,8 +1090,10 @@ body.is-modal-open {
 
 .services-footer {
   display: grid;
+  grid-template-columns: minmax(14rem, 0.72fr) 1fr;
+  align-items: center;
   gap: 1rem;
-  padding: 1.2rem 0.4rem 0.35rem;
+  padding: 1.2rem 0 0.15rem;
   border-top: 1px solid rgba(255, 229, 141, 0.24);
 }
 
@@ -1079,7 +1105,7 @@ body.is-modal-open {
   color: rgba(248, 239, 226, 0.78);
   font-size: 0.96rem;
   line-height: 1.5;
-  text-align: center;
+  text-align: left;
 }
 
 .services-footer strong {
@@ -1457,6 +1483,10 @@ body.is-modal-open {
   .services-intro {
     justify-self: center;
     text-align: center;
+  }
+
+  .services-panel {
+    justify-self: center;
   }
 
   .services-intro p {
@@ -1887,9 +1917,19 @@ body.is-modal-open {
     padding-bottom: 4.8rem;
   }
 
+  .section-block.services > .services-intro,
+  .section-block.services > .services-panel {
+    width: min(100%, 21.5rem);
+    max-width: calc(100vw - 1.5rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .services-intro h2 {
-    max-width: min(18rem, calc(100vw - 2rem));
-    font-size: clamp(1.65rem, 7.2vw, 2.45rem);
+    max-width: 19.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(1.8rem, 8vw, 2.55rem);
     line-height: 1.08;
   }
 
@@ -1928,10 +1968,16 @@ body.is-modal-open {
     margin-bottom: 0.55rem;
   }
 
-  .service-item {
-    grid-template-columns: 3.35rem 1fr;
+  .service-list {
+    grid-template-columns: 1fr;
     gap: 0.7rem;
-    padding: 0.9rem 0.2rem;
+  }
+
+  .service-item {
+    min-height: auto;
+    grid-template-columns: 3rem 1fr;
+    gap: 0.68rem;
+    padding: 0.82rem;
     text-align: left;
   }
 
@@ -1945,11 +1991,13 @@ body.is-modal-open {
   }
 
   .services-footer {
+    grid-template-columns: 1fr;
     padding-top: 1rem;
   }
 
   .services-footer p {
     font-size: 0.84rem;
+    text-align: center;
   }
 
   .premium-card,
