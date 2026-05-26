@@ -986,48 +986,12 @@ body.is-modal-open {
   pointer-events: none;
 }
 
-.services-brand,
 .service-item,
 .services-footer {
   position: relative;
   z-index: 1;
 }
 
-.services-brand {
-  display: grid;
-  justify-items: center;
-  padding: 0.45rem 0 1.35rem;
-  text-align: center;
-}
-
-.services-brand strong {
-  color: #fff6df;
-  font-size: clamp(1.65rem, 2.4vw, 2.8rem);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  line-height: 1;
-  text-transform: uppercase;
-}
-
-.services-brand > span:last-child {
-  margin-top: 0.2rem;
-  color: var(--gold);
-  font-family: var(--serif);
-  font-size: clamp(2.6rem, 5vw, 5.6rem);
-  font-style: italic;
-  line-height: 0.88;
-}
-
-.services-laser-icon {
-  display: grid;
-  width: 4.4rem;
-  height: 4.4rem;
-  place-items: center;
-  margin-bottom: 0.8rem;
-  color: var(--gold);
-}
-
-.services-laser-icon svg,
 .service-icon svg {
   width: 100%;
   height: 100%;
@@ -1035,10 +999,6 @@ body.is-modal-open {
   stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-.services-laser-icon svg {
-  stroke-width: 2.25;
 }
 
 .service-list {
@@ -1090,7 +1050,8 @@ body.is-modal-open {
 
 .services-footer {
   display: grid;
-  grid-template-columns: minmax(14rem, 0.72fr) 1fr;
+  grid-template-columns: minmax(14rem, 20rem);
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   padding: 1.2rem 0 0.15rem;
@@ -1099,17 +1060,6 @@ body.is-modal-open {
 
 .services-footer .button {
   width: 100%;
-}
-
-.services-footer p {
-  color: rgba(248, 239, 226, 0.78);
-  font-size: 0.96rem;
-  line-height: 1.5;
-  text-align: left;
-}
-
-.services-footer strong {
-  color: var(--gold-light);
 }
 
 .indicated {
@@ -1949,25 +1899,6 @@ body.is-modal-open {
     border-radius: 1rem;
   }
 
-  .services-brand {
-    padding-top: 0.35rem;
-    padding-bottom: 1rem;
-  }
-
-  .services-brand strong {
-    font-size: 1.35rem;
-  }
-
-  .services-brand > span:last-child {
-    font-size: 2.7rem;
-  }
-
-  .services-laser-icon {
-    width: 3.2rem;
-    height: 3.2rem;
-    margin-bottom: 0.55rem;
-  }
-
   .service-list {
     grid-template-columns: 1fr;
     gap: 0.7rem;
@@ -1993,11 +1924,6 @@ body.is-modal-open {
   .services-footer {
     grid-template-columns: 1fr;
     padding-top: 1rem;
-  }
-
-  .services-footer p {
-    font-size: 0.84rem;
-    text-align: center;
   }
 
   .premium-card,
